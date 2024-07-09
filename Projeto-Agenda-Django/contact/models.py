@@ -10,6 +10,9 @@ class Contact(models.Model):
     email = models.EmailField(max_length=254, blank=True)
     created_date = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True)
+    show = models.BooleanField(default=True) #exibir ou não um contato
+    picture = models.ImageField(default=True, upload_to='pictures/%Y/%m') #upload_to cria uma pasta dentro da pasta media, que cria a pasta do ano e dentro cria uma pasta com o mêspip 
+
 
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'
