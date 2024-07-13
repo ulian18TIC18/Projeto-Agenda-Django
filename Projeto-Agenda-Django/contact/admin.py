@@ -6,7 +6,7 @@ from contact import models
 
 @admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = 'id', 'first_name', 'last_name', 'phone',
+    list_display = 'id', 'first_name', 'last_name', 'phone', 
     ordering = '-id', #ordem inversar do id
     list_filter = 'created_date', #filtro por data
     search_fields = 'id', 'first_name', 'last_name', #inserir busca
