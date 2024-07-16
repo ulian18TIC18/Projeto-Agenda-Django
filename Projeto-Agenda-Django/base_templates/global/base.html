@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href ="{% static 'global/css/style.css' %}" >
-
+    <link rel="stylesheet" href="{% static 'global/css/style.css' %}">
     <title>Projeto Agenda</title>
 </head>
 <body>
-    <h1>Template Base</h1>
+    <main class="content"> 
+        {% block content %}  {% endblock content %}
+    </main> 
 </body>
 </html>
