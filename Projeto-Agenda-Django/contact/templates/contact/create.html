@@ -6,32 +6,35 @@
         <h2>Contatos</h2>
 
         <form 
-            action=""
+            action="{% url 'contact:create' %}"
             method="POST"
             enctype="multipart/form-data" 
         >
         <!--enctype é utilizado para postar arquivos sem passar pela url-->
 
-        {% csrf_token %}
+            {% csrf_token %}
+
 
             <div class="form-content">
 
-                <div class="form-group">
+                    {% for field in form %}
+                        <div class="form-group">
 
-                    <label for="id_first_name">LABEL</label>
-                    <input type="text" name="first_name" maxlength="255" id="id_first_name">
+                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {{ field }}
 
-                </div>
+                        </div>
+                    {% endfor %}
 
-                <div class="form-content">
+                    <div class="form-content">
 
-                    <div class="form-group">
+                        <div class="form-group">
 
-                        <button class="btn" type="submit">ENVIAR</button>
+                            <button class="btn" type="submit">ENVIAR</button>
+
+                        </div>
 
                     </div>
-
-                </div>
 
             </div>
 
