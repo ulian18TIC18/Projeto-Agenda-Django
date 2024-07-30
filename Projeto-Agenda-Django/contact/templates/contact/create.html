@@ -24,6 +24,12 @@
                             {{ field }}
                             {{ field.errors }}
 
+                            {% if field.help_text %}
+                                <p class="help-text">
+                                    {{ field.help_text }}
+                                </p>
+                            {% endif %}
+
                         </div>
                     {% endfor %}
 
