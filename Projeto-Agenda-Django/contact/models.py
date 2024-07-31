@@ -17,12 +17,12 @@ class Category(models.Model):
         return self.name
 
 class Contact(models.Model):
-    first_name = models.CharField(max_length=50, verbose_name='Nome')
+    first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50, blank=True, verbose_name='Sobrenome')
     phone = models.CharField(max_length=50, verbose_name='Telefone') 
     email = models.EmailField(max_length=254, blank=True)
     created_date = models.DateTimeField(default=timezone.now)
-    description = models.TextField(blank=True)
+    description = models.TextField(blank=True, verbose_name='Descrição')
     show = models.BooleanField(default=True) #exibir ou não um contato
     picture = models.ImageField(blank=True, upload_to='pictures/%Y/%m') #upload_to cria uma pasta dentro da pasta media, que cria a pasta do ano e dentro cria uma pasta com o mês
 
