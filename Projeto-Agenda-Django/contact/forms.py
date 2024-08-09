@@ -56,7 +56,7 @@ class ContactForm(forms.ModelForm):
 #        }
 
     def clean(self):
-        cleaned_data = self.cleaned_data        
+        '''cleaned_data = self.cleaned_data        
 
         self.add_error(
             'first_name',
@@ -74,7 +74,7 @@ class ContactForm(forms.ModelForm):
             )
         )
         
-        return super().clean()
+        return super().clean()'''
     
     def clean_first_name(self):
         first_name = self.cleaned_data.get('first_name')
