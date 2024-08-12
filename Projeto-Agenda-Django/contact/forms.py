@@ -3,7 +3,6 @@ from django.core.exceptions import ValidationError
 
 from . import models
 
-
 class ContactForm(forms.ModelForm):
     first_name = forms.CharField(
         widget=forms.TextInput(

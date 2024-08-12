@@ -26,7 +26,6 @@ def index(request):
         context
     )
 
-
 def search(request):
     search_value = request.GET.get('q', '').strip()
 
